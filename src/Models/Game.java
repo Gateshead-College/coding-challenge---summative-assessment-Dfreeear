@@ -12,8 +12,8 @@ public class Game {
     public int gameID;
     public int numInStock;
 
-    private ArrayList<Game> gameArray;
-    private Game game;
+
+
 
     public Game(String title, int ageRating, String publisher, String genre, int price, int gameID, int numInStock) {
         this.title = title;
@@ -22,6 +22,7 @@ public class Game {
         this.genre = genre;
         this.price = price;
         this.gameID = gameID;
+        this.numInStock = numInStock;
     }
 
 }
