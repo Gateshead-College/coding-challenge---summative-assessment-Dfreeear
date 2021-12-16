@@ -22,6 +22,7 @@ public class StockMenu {
     }
 
     private void login() {
+        System.out.println("____________________________________");
         System.out.println("Hello, what is your username?");
         String username = new Scanner(System.in).nextLine();
         System.out.println("What is your password?");
@@ -38,6 +39,7 @@ public class StockMenu {
                 }
             }
             if (!e.getUsername().equalsIgnoreCase(username) && !e.getPassword().equals(password)) {
+                System.out.println("xxxxxxxxxxxxxxxxxxxx");
                 System.out.println("That username or password is incorrect");
                 System.out.println("Please try again");
                 login();
@@ -64,10 +66,12 @@ public class StockMenu {
     }
 
     private void mainMenuChoice() {
+        System.out.println("_______________________________________");
         System.out.println("Hello welcome to the D3 Gaming menu");
         System.out.println("Please choose from the following:");
         System.out.println("1: Game info and stock");
         System.out.println("2: Employee info");
+        System.out.println("_________________________________________");
 
         int input = Integer.parseInt(myScanner.nextLine());
         switch (input) {
@@ -81,12 +85,14 @@ public class StockMenu {
     }
 
     private void nonAdminMenu() {
+        System.out.println("_________________________________________");
         System.out.println("Hello, welcome to the non admin menu");
         System.out.println("Please choose from the following:");
         System.out.println("1: View Games and stock");
         System.out.println("2: View employee info");
         System.out.println("3: amend employee info");
         System.out.println("4: Back to login page - you will be logged out!");
+        System.out.println("_________________________________________");
         int input = Integer.parseInt(myScanner.nextLine());
         switch (input) {
             case 1:
@@ -132,11 +138,13 @@ public class StockMenu {
 
 
     private void getEmployeeMenuChoice() {
+        System.out.println("_________________________________________");
         System.out.println("Hello welcome to the employee menu");
         System.out.println("Please choose an option from below:");
         System.out.println("1: View employees List");
         System.out.println("2: Amend the employee records menu");
         System.out.println("3: Back");
+        System.out.println("_________________________________________");
         int input = Integer.parseInt(myScanner.nextLine());
         switch (input) {
             case 1:
@@ -153,17 +161,19 @@ public class StockMenu {
     }
 
     private void amendEmployeeRecordMenu() {
+        System.out.println("_________________________________________");
         System.out.println("Welcome the the Employee Amend Details Menu:");
         System.out.println("Please choose an option from below:");
         System.out.println("1: Add a new employee");
         System.out.println("2: Remove an existing employee");
         System.out.println("3: Update an employees details");
         System.out.println("4: Go back");
+        System.out.println("_________________________________________");
 
         int input = Integer.parseInt(myScanner.nextLine());
         switch (input) {
             case 1:
-                //displayEmployeesNew();
+                displayEmployeesNew();
                 break;
             case 2:
                 displayEmployeesDelete();
@@ -176,6 +186,34 @@ public class StockMenu {
                 break;
         }
 
+    }
+
+    private void displayEmployeesNew() {
+        System.out.println("_______________________________");
+        System.out.println("Welcome to to add employees menu");
+        System.out.println("What is the forename of the new employee:");
+        String forename = new Scanner(System.in).nextLine();
+        System.out.println("What is the surnname of the new employee:");
+        String surname = new Scanner(System.in).nextLine();
+        System.out.println("Who is the username of the new employee:");
+        String username = new Scanner(System.in).nextLine();
+        System.out.println("What is the password of the new employee:");
+        String password = Integer.parseInt(new Scanner(System.in).nextLine());
+        System.out.println("What is the service of the new employee:");
+        Integer service = new Scanner(System.in).nextLine();
+        System.out.println("What is the Game ID of the new game:");
+        Boolean admin = new Scanner(System.in).nextLine();
+        System.out.println("What is the number of stock of the new game:");
+        Integer numInStock = Integer.parseInt(new Scanner(System.in).nextLine());
+        employeeArray.add(new Employee(forename, surname, username, password, service, admin));
+        System.out.println("New game added is: " + "Title: " + forename + " Publsher:  " + surname + " Genre: " +  + " price: " + price);
+        System.out.println("");
+        System.out.println("Would you like to add another game?");
+        if (new Scanner(System.in).nextLine().equalsIgnoreCase("y")) {
+            addRecordMenu();
+        } else {
+            getMenuChoice();
+        }
     }
 
     private void displayEmployeesEdit() {
@@ -196,6 +234,7 @@ public class StockMenu {
     }
 
     private void updateEmployeeRecord(Employee selected) {
+        System.out.println("_________________________________________");
         System.out.println("Which field would you like to amend?");
         System.out.println("1 - First name");
         System.out.println("2 - Second Name");
@@ -203,6 +242,7 @@ public class StockMenu {
         System.out.println("4 - Password");
         System.out.println("5 - Service");
         System.out.println("6 - Admin rights");
+        System.out.println("_________________________________________");
         getNewEmployeeValue(selected, Integer.parseInt(new Scanner(System.in).nextLine()));
     }
 
