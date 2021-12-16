@@ -198,21 +198,21 @@ public class StockMenu {
         System.out.println("Who is the username of the new employee:");
         String username = new Scanner(System.in).nextLine();
         System.out.println("What is the password of the new employee:");
-        String password = Integer.parseInt(new Scanner(System.in).nextLine());
+        String password = new Scanner(System.in).nextLine();
         System.out.println("What is the service of the new employee:");
-        Integer service = new Scanner(System.in).nextLine();
+        Integer service = Integer.parseInt(new Scanner(System.in).nextLine());
         System.out.println("What is the Game ID of the new game:");
         Boolean admin = new Scanner(System.in).nextLine();
         System.out.println("What is the number of stock of the new game:");
         Integer numInStock = Integer.parseInt(new Scanner(System.in).nextLine());
         employeeArray.add(new Employee(forename, surname, username, password, service, admin));
-        System.out.println("New game added is: " + "Title: " + forename + " Publsher:  " + surname + " Genre: " +  + " price: " + price);
+        System.out.println("New game added is: " + "forename:: " + forename + " Surname:  " + surname + " Username: " + username + " Password:  " + password + " Service: " + service + " admin status" + admin);
         System.out.println("");
-        System.out.println("Would you like to add another game?");
+        System.out.println("Would you like to add another employee-?");
         if (new Scanner(System.in).nextLine().equalsIgnoreCase("y")) {
-            addRecordMenu();
+            displayEmployeesNew();
         } else {
-            getMenuChoice();
+            mainMenuChoice();
         }
     }
 
